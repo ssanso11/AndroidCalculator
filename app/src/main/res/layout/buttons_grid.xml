@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
+            android:id="@+id/clear"
             android:text="C"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -26,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
+            android:id="@+id/change_sign"
             android:text="SIGN"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -34,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
+            android:id="@+id/modulus"
             android:text="%"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -42,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
+            android:id="@+id/divide"
             android:text="÷"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -54,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
+            android:id="@+id/no7"
             android:text="7"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -62,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
+            android:id="@+id/no8"
             android:text="8"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -70,6 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
+            android:id="@+id/no9"
             android:text="9"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -78,7 +85,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
+            android:id="@+id/multiply"
             android:text="X"
+            android:textSize="30dp"
             android:textColor="@color/white" />
         </TableRow>
         <TableRow
@@ -89,13 +98,17 @@
             android:layout_width="wrap_content" android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="4"
-            android:textColor="@color/white" />
+                android:id="@+id/no4"
+                android:textSize="30dp"
+
+                android:textColor="@color/white" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="5"
+            android:id="@+id/no5"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -104,6 +117,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="6"
+            android:id="@+id/no6"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -112,6 +126,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
             android:text="-"
+            android:id="@+id/subtract"
             android:textSize="30dp"
             android:textColor="@color/white" />
         </TableRow>
@@ -124,6 +139,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="1"
+            android:id="@+id/no1"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -132,6 +148,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="2"
+            android:id="@+id/no2"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -140,6 +157,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="3"
+            android:id="@+id/no3"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -148,6 +166,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
             android:text="+"
+            android:id="@+id/add"
             android:textSize="30dp"
             android:textColor="@color/white" />
         </TableRow>
@@ -160,6 +179,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
             android:text="UP"
+            android:id="@+id/history"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -168,6 +188,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="0"
+            android:id="@+id/no0"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -176,6 +197,7 @@
             android:layout_height="match_parent"
             android:background="@color/darkPrimary"
             android:text="."
+            android:id="@+id/decimal"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -183,7 +205,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/orangePrimary"
-            android:text="C"
+            android:text="="
+            android:id="@+id/equals"
             android:textSize="30dp"
             android:textColor="@color/white" />
         </TableRow>
