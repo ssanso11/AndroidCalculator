@@ -9,8 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import java.lang.*;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class MainActivity extends AppCompatActivity {
+    static double res = 0.0;
+    static String currentString = "";
+    static double currentNumber = 0.0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final TextView equation = findViewById(R.id.equation);
         final TextView result = findViewById(R.id.result);
         final Button no0 = findViewById(R.id.no0);
-        no0.setOnClickListener(this);
         final Button no1 = findViewById(R.id.no1);
-        no1.setOnClickListener(this);
         final Button no2 = findViewById(R.id.no2);
         final Button no3 = findViewById(R.id.no3);
         final Button no4 = findViewById(R.id.no4);
@@ -44,65 +44,177 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final Button equals = findViewById(R.id.equals);
         final Button decimal = findViewById(R.id.decimal);
         final Button sign = findViewById(R.id.change_sign);
-        no0.setOnClickListener(this);
-        no1.setOnClickListener(this);
-        no2.setOnClickListener(this);
-        no3.setOnClickListener(this);
-        no4.setOnClickListener(this);
-        no5.setOnClickListener(this);
-        no6.setOnClickListener(this);
-        no7.setOnClickListener(this);
-        no8.setOnClickListener(this);
-        no9.setOnClickListener(this);
-        add.setOnClickListener(this);
-        subtract.setOnClickListener(this);
-        multiply.setOnClickListener(this);
-        divide.setOnClickListener(this);
-        clear.setOnClickListener(this);
-        modulus.setOnClickListener(this);
-        decimal.setOnClickListener(this);
-        sign.setOnClickListener(this);
-        equals.setOnClickListener(this);
+        //listens for click of button 0
+        no0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set equation text equal to equation text + 0
+                equation.setText(equation.getText() + "0");
+                currentString +="0";
+                currentNumber += (double) Integer.parseInt(currentString);
+            }
+        });
+
+        no1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "1");
+                currentString +="1";
+                currentNumber += (double) Integer.parseInt(currentString);
+
+            }
+        });
+        no2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "2");
+                currentString +="2";
+                currentNumber += (double) Integer.parseInt(currentString);
 
 
-    }
+            }
+        });
+        no3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "3");
+                currentString +="3";
+                currentNumber += (double) Integer.parseInt(currentString);
 
-    @Override
-    public void onClick(View v) {
-        final int id = v.getId();
-        Log.d("TEST", Integer.toString(id));
-        switch(id){
-            case R.id.no0:
-                equation.setText("0");
-                Log.d("ASDASD", "0");
-            case R.id.no1:
-                Log.d("ASDASD", "1");
-            case R.id.no2:
-                Log.d("ASDASD", "2");
-            case R.id.no3:
-                Log.d("ASDASD", "3");
-            case R.id.no4:
-                Log.d("ASDASD", "4");
-            case R.id.no5:
-                Log.d("ASDASD", "5");
-            case R.id.no6:
-                Log.d("ASDASD", "6");
-            case R.id.no7:
-                Log.d("ASDASD", "7");
-            case R.id.no8:
-                Log.d("ASDASD", "8");
-            case R.id.no9:
-                Log.d("ASDASD", "9");
-            case R.id.add:
-                Log.d("ASDASD", "+");
-            case R.id.subtract:
-                Log.d("ASDASD", "-");
-            case R.id.multiply:
-                Log.d("ASDASD", "x");
-            case R.id.divide:
-                Log.d("ASDASD", "divide");
-            case R.id.equals:
-                Log.d("ASDASD", "=");
-        }
+
+            }
+        });
+        no4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "4");
+                currentString +="4";
+                currentNumber += (double) Integer.parseInt(currentString);
+
+            }
+        });
+        no5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "5");
+                currentString +="5";
+                currentNumber += (double) Integer.parseInt(currentString);
+
+            }
+        });
+        no6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "6");
+                currentString +="6";
+                currentNumber += (double) Integer.parseInt(currentString);
+
+            }
+        });
+        no7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "7");
+                currentString +="7";
+                currentNumber += (double) Integer.parseInt(currentString);
+
+            }
+        });
+        no8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "8");
+                currentString +="8";
+                currentNumber += (double) Integer.parseInt(currentString);
+
+            }
+        });
+        no9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + "9");
+                currentString +="9";
+                currentNumber += (double) Integer.parseInt(currentString);
+
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //1234+2342
+                res += currentNumber;
+                equation.setText(equation.getText() + " + ");
+                currentNumber = 0.0;
+            }
+        });
+        subtract.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                res -= currentNumber;
+                equation.setText(equation.getText() + " - ");
+                currentNumber = 0.0;
+                currentString ="";
+            }
+        });
+        multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                res *= currentNumber;
+                equation.setText(equation.getText() + " x ");
+                currentNumber = 0.0;
+                currentString ="";
+
+            }
+        });
+        divide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                res /= currentNumber;
+                equation.setText(equation.getText() + " / ");
+                currentNumber = 0.0;
+                currentString ="";
+
+            }
+        });
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText("");
+                result.setText("");
+                currentNumber = 0.0;
+                currentString ="";
+
+            }
+        });
+        modulus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + " % ");
+            }
+        });
+        decimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + ".");
+            }
+        });
+        sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                equation.setText(equation.getText() + " - ");
+            }
+        });
+        equals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                res += currentNumber;
+                result.setText("" + res);
+                currentNumber = 0.0;
+                currentString ="";
+
+            }
+        });
+
+
     }
 }
