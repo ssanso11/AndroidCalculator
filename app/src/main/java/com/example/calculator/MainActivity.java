@@ -13,7 +13,7 @@ import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
     static String currentString = "";
-
+    static boolean newEquation = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,65 +52,99 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //set equation text equal to equation text + 0
                 //.setText() is for setting labels,
-                equation.append("0");
-                currentString +="0";
+                if(newEquation) {
+                    equation.setText("0");
+                    currentString = "0";
+                    newEquation = false;
+                } else {
+                    equation.append("0");
+                    currentString +="0";
+                }
             }
         });
         //listens for click of button 1
         no1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("1");
-                currentString +="1";
-
+                if(newEquation) {
+                    equation.setText("1");
+                    currentString = "1";
+                    newEquation = false;
+                } else {
+                    equation.append("1");
+                    currentString +="1";
+                }
             }
         });
         //listens for click of button 2
         no2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("2");
-                currentString +="2";
-
-
+                if(newEquation) {
+                    equation.setText("2");
+                    currentString = "2";
+                    newEquation = false;
+                } else {
+                    equation.append("2");
+                    currentString +="2";
+                }
             }
         });
         //listens for click of button 3
         no3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("3");
-
-                currentString +="3";
-
-
+                if(newEquation) {
+                    equation.setText("3");
+                    currentString = "3";
+                    newEquation = false;
+                } else {
+                    equation.append("3");
+                    currentString +="3";
+                }
             }
         });
         //listens for click of button 4
         no4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("4");
-
-                currentString +="4";
-
+                if(newEquation) {
+                    equation.setText("4");
+                    currentString = "4";
+                    newEquation = false;
+                } else {
+                    equation.append("4");
+                    currentString += "4";
+                }
             }
         });
         //listens for click of button 5
         no5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("5");
-                currentString +="5";
-
+                if(newEquation) {
+                    equation.setText("5");
+                    currentString = "5";
+                    newEquation = false;
+                } else {
+                    equation.append("5");
+                    currentString +="5";
+                }
             }
         });
         //listens for click of button 6
         no6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("6");
-                currentString +="6";
+                if(newEquation) {
+                    equation.setText("6");
+                    currentString = "6";
+                    newEquation = false;
+                } else {
+                    equation.append("6");
+                    currentString +="6";
+                }
+
 
             }
         });
@@ -118,8 +152,15 @@ public class MainActivity extends AppCompatActivity {
         no7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("7");
-                currentString +="7";
+                if(newEquation) {
+                    equation.setText("7");
+                    currentString = "7";
+                    newEquation = false;
+                } else {
+                    equation.append("7");
+                    currentString +="7";
+                }
+
 
             }
         });
@@ -127,8 +168,15 @@ public class MainActivity extends AppCompatActivity {
         no8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("8");
-                currentString +="8";
+                if(newEquation) {
+                    equation.setText("8");
+                    currentString = "8";
+                    newEquation = false;
+                } else {
+                    equation.append("8");
+                    currentString +="8";
+                }
+
 
             }
         });
@@ -136,8 +184,15 @@ public class MainActivity extends AppCompatActivity {
         no9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("9");
-                currentString +="9";
+                if(newEquation) {
+                    equation.setText("9");
+                    currentString = "9";
+                    newEquation = false;
+                } else {
+                    equation.append("9");
+                    currentString +="9";
+                }
+
 
             }
         });
@@ -145,25 +200,45 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentString+="+";
-                equation.append("+");
+                if(newEquation) {
+                    equation.setText("+");
+                    currentString = "+";
+                    newEquation = false;
+                } else {
+                    currentString+="+";
+                    equation.append("+");
+                }
+
             }
         });
         //listens for click of subtract button
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(newEquation) {
+                    equation.setText("-");
+                    currentString = "-";
+                    newEquation = false;
+                } else {
+                    equation.append("-");
+                    currentString +="-";
+                }
 
-                equation.append("-");
-                currentString +="-";
             }
         });
         //listens for click of multiply button
         multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("x");
-                currentString +="*";
+                if(newEquation) {
+                    equation.setText("x");
+                    currentString = "x";
+                    newEquation = false;
+                } else {
+                    equation.append("x");
+                    currentString +="*";
+                }
+
 
             }
         });
@@ -171,8 +246,15 @@ public class MainActivity extends AppCompatActivity {
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("/");
-                currentString +="/";
+                if(newEquation) {
+                    equation.setText("/");
+                    currentString = "/";
+                    newEquation = false;
+                } else {
+                    equation.append("/");
+                    currentString +="/";
+                }
+
 
             }
         });
@@ -190,24 +272,44 @@ public class MainActivity extends AppCompatActivity {
         openPar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append("(");
-                currentString +="(";
+                if(newEquation) {
+                    equation.setText("(");
+                    currentString = "(";
+                    newEquation = false;
+                } else {
+                    equation.append("(");
+                    currentString +="(";
+                }
+
             }
         });
         //listens for click of decimal button
         decimal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append(".");
-                currentString +=".";
+                if(newEquation) {
+                    equation.setText(".");
+                    currentString = ".";
+                    newEquation = false;
+                } else {
+                    equation.append(".");
+                    currentString +=".";
+                }
+
             }
         });
         //listens for click of close parenthesis button
         closePar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.append(")");
-                currentString +=")";
+                if(newEquation) {
+                    equation.setText(")");
+                    currentString = ")";
+                    newEquation = false;
+                } else {
+                    equation.append(")");
+                    currentString += ")";
+                }
             }
         });
         //listens for click of delete one button
@@ -239,6 +341,7 @@ public class MainActivity extends AppCompatActivity {
                         {
                             double res = e.evaluate();
                             result.setText("" + res);
+                            newEquation = true;
                         }
                         else
                         {
