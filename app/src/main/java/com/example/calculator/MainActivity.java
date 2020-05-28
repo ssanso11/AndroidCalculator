@@ -255,8 +255,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
-                //clear input on equal click
-                currentString ="";
+
 
             }
         });
