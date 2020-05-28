@@ -27,8 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
-            android:id="@+id/change_sign"
-            android:text="SIGN"
+            android:id="@+id/open_par"
+            android:text="("
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -36,8 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
-            android:id="@+id/modulus"
-            android:text="%"
+            android:id="@+id/close_par"
+            android:text=")"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -178,8 +178,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/darkSecondary"
-            android:text="UP"
-            android:id="@+id/history"
+            android:text="Del"
+            android:id="@+id/delete_one"
             android:textSize="30dp"
             android:textColor="@color/white" />
 

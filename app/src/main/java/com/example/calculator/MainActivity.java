@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.lang.*;
+import net.objecthunter.exp4j.*;
+import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
-    static double res = 0.0;
     static String currentString = "";
-    static double currentNumber = 0.0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,178 +39,223 @@ public class MainActivity extends AppCompatActivity {
         final Button subtract = findViewById(R.id.subtract);
         final Button divide = findViewById(R.id.divide);
         final Button multiply = findViewById(R.id.multiply);
-        final Button modulus = findViewById(R.id.modulus);
+        final Button openPar = findViewById(R.id.open_par);
         final Button clear = findViewById(R.id.clear);
-        final Button history = findViewById(R.id.history);
         final Button equals = findViewById(R.id.equals);
         final Button decimal = findViewById(R.id.decimal);
-        final Button sign = findViewById(R.id.change_sign);
+        final Button closePar = findViewById(R.id.close_par);
+        final Button deleteOne = findViewById(R.id.delete_one);
+
         //listens for click of button 0
         no0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //set equation text equal to equation text + 0
-                equation.setText(equation.getText() + "0");
+                //.setText() is for setting labels,
+                equation.append("0");
                 currentString +="0";
-                currentNumber += (double) Integer.parseInt(currentString);
             }
         });
-
+        //listens for click of button 1
         no1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "1");
+                equation.append("1");
                 currentString +="1";
-                currentNumber += (double) Integer.parseInt(currentString);
 
             }
         });
+        //listens for click of button 2
         no2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "2");
+                equation.append("2");
                 currentString +="2";
-                currentNumber += (double) Integer.parseInt(currentString);
 
 
             }
         });
+        //listens for click of button 3
         no3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "3");
+                equation.append("3");
+
                 currentString +="3";
-                currentNumber += (double) Integer.parseInt(currentString);
 
 
             }
         });
+        //listens for click of button 4
         no4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "4");
+                equation.append("4");
+
                 currentString +="4";
-                currentNumber += (double) Integer.parseInt(currentString);
 
             }
         });
+        //listens for click of button 5
         no5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "5");
+                equation.append("5");
                 currentString +="5";
-                currentNumber += (double) Integer.parseInt(currentString);
 
             }
         });
+        //listens for click of button 6
         no6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "6");
+                equation.append("6");
                 currentString +="6";
-                currentNumber += (double) Integer.parseInt(currentString);
 
             }
         });
+        //listens for click of button 7
         no7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "7");
+                equation.append("7");
                 currentString +="7";
-                currentNumber += (double) Integer.parseInt(currentString);
 
             }
         });
+        //listens for click of button 8
         no8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "8");
+                equation.append("8");
                 currentString +="8";
-                currentNumber += (double) Integer.parseInt(currentString);
 
             }
         });
+        //listens for click of button 9
         no9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + "9");
+                equation.append("9");
                 currentString +="9";
-                currentNumber += (double) Integer.parseInt(currentString);
 
             }
         });
+        //listens for click of add button
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //1234+2342
-                res += currentNumber;
-                equation.setText(equation.getText() + " + ");
-                currentNumber = 0.0;
+                currentString+="+";
+                equation.append("+");
             }
         });
+        //listens for click of subtract button
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                res -= currentNumber;
-                equation.setText(equation.getText() + " - ");
-                currentNumber = 0.0;
-                currentString ="";
+
+                equation.append("-");
+                currentString +="-";
             }
         });
+        //listens for click of multiply button
         multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                res *= currentNumber;
-                equation.setText(equation.getText() + " x ");
-                currentNumber = 0.0;
-                currentString ="";
+                equation.append("x");
+                currentString +="*";
 
             }
         });
+        //listens for click of divide button
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                res /= currentNumber;
-                equation.setText(equation.getText() + " / ");
-                currentNumber = 0.0;
-                currentString ="";
+                equation.append("/");
+                currentString +="/";
 
             }
         });
+        //listens for click of clear button
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 equation.setText("");
                 result.setText("");
-                currentNumber = 0.0;
                 currentString ="";
 
             }
         });
-        modulus.setOnClickListener(new View.OnClickListener() {
+        //listens for click of open parenthesis button
+        openPar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + " % ");
+                equation.append("(");
+                currentString +="(";
             }
         });
+        //listens for click of decimal button
         decimal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + ".");
+                equation.append(".");
+                currentString +=".";
             }
         });
-        sign.setOnClickListener(new View.OnClickListener() {
+        //listens for click of close parenthesis button
+        closePar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equation.setText(equation.getText() + " - ");
+                equation.append(")");
+                currentString +=")";
             }
         });
+        //listens for click of delete one button
+        deleteOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(equation.length() >= 1)
+                {
+                    equation.setText(equation.getText().toString().substring(0, equation.length()-1) );
+                    currentString =currentString.substring(0, currentString.length()-1);
+                }
+            }
+        });
+        //listens for click of equal button
         equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                res += currentNumber;
-                result.setText("" + res);
-                currentNumber = 0.0;
+                if(currentString.length() != 0)
+                {
+
+                    //handle divide by zero and syntax errors
+                    try {
+                        //evaluate gets the result of the expression
+                        //create a new expression with library openhunter.net, was found by bryson's dad
+                        //really cool library, parses string expressions using shunting yard algorithm
+                        Expression e = new ExpressionBuilder(currentString).build();
+                        ValidationResult syntaxCheck = e.validate();
+                        if(syntaxCheck.isValid())
+                        {
+                            double res = e.evaluate();
+                            result.setText("" + res);
+                        }
+                        else
+                        {
+                            result.setText("Invalid Syntax");
+                        }
+                    } catch(IllegalArgumentException pErr) {
+                        result.setText("Invalid Syntax");
+                    } catch (EmptyStackException err) {
+                        result.setText("Invalid syntax");
+                    } catch (Exception ArithmeticException) {
+                        result.setText("Divide by zero!");
+                    }  finally {
+
+                    }
+
+                }
+                //clear input on equal click
                 currentString ="";
 
             }
