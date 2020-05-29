@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<!--The buttons are contained in a tablelayout component, with 5 rows of 4 buttons-->
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,6 +14,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
         >
+        <!--The id variable is the most important here, it's how we link the components to Java-->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

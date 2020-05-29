@@ -10,19 +10,29 @@ import android.widget.TextView;
 import java.lang.*;
 import net.objecthunter.exp4j.*;
 import java.util.*;
-
+//this is our main class which is powering the GUI in the background
 public class MainActivity extends AppCompatActivity {
+    //instance variables
+    //currentString is the current typed equation
     static String currentString = "";
+    //newEquation tells us whether the equal button was just pressed or not
     static boolean newEquation = false;
+
+    //i'm not to sure about android, but i think onCreate in run
+    //as soon as all of the components are created,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //boiler plate code
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //hide the navigation bar at the top of the screen
         try
         {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
+        //initiation of the components from XML to Java
+        //findViewById is linked to the xml "id" variable
         final TextView equation = findViewById(R.id.equation);
         final TextView result = findViewById(R.id.result);
         final Button no0 = findViewById(R.id.no0);
@@ -47,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         final Button deleteOne = findViewById(R.id.delete_one);
 
         //listens for click of button 0
+        //for each of the buttons, we have to check if the equal button was just pressed
+        //if it was, we set the textview text, or else we append the textview text
         no0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -318,6 +330,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(equation.length() >= 1)
                 {
+                    //cut off the last character of the string
                     equation.setText(equation.getText().toString().substring(0, equation.length()-1) );
                     currentString =currentString.substring(0, currentString.length()-1);
                 }
@@ -327,6 +340,7 @@ public class MainActivity extends AppCompatActivity {
         equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //make sure string > 0
                 if(currentString.length() != 0)
                 {
 
@@ -337,10 +351,14 @@ public class MainActivity extends AppCompatActivity {
                         //really cool library, parses string expressions using shunting yard algorithm
                         Expression e = new ExpressionBuilder(currentString).build();
                         ValidationResult syntaxCheck = e.validate();
+                        //double check if syntax is valid
                         if(syntaxCheck.isValid())
                         {
+                            //evaluate evaluates the expression
                             double res = e.evaluate();
+                            //set textview text to the result
                             result.setText("" + res);
+                            //start a new equation
                             newEquation = true;
                         }
                         else
